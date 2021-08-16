@@ -10,6 +10,11 @@ class homeScreen extends StatefulWidget {
 
 // ignore: camel_case_types
 class _homeScreenState extends State<homeScreen> {
+  int count = 0;
+  String s = "Completed";
+  var clr = Colors.green;
+  var ICON = Icons.check;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,9 +61,57 @@ class _homeScreenState extends State<homeScreen> {
       ),
       // body
 
-      body: const Card(
+      body: Card(
         child: Center(
-          child: Text("hello world !"),
+          child: Column(
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              Text("$count"),
+              // ignore: deprecated_member_use
+              RaisedButton(
+                onPressed: () {
+                  setState(
+                    () {
+                      count++;
+                    },
+                  );
+                },
+                child: const Text("increase :"),
+              ),
+
+              // ignore: deprecated_member_use
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RaisedButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          if (clr == Colors.green) {
+                            clr = Colors.red;
+                            s = "Incompleted";
+                            ICON = Icons.timelapse;
+                          } else {
+                            clr = Colors.green;
+                            s = "Completed";
+                            ICON = Icons.check;
+                          }
+                        },
+                      );
+                    },
+                    child: Text(s),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(
+                      ICON,
+                      color: clr,
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
 
