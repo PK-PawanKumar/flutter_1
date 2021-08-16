@@ -56,9 +56,19 @@ class _homeScreenState extends State<homeScreen> {
       ),
       // body
 
-      body: const Card(
-        child: Center(
-          child: Text("hello world !"),
+      body: GestureDetector(
+        onTap: () {
+          // ignore: avoid_print
+          print("clicked at text'hello world!");
+        },
+        onLongPress: () {
+          // ignore: avoid_print
+          print("long pressed at text'hello world!");
+        },
+        child: const Card(
+          child: Center(
+            child: Text("hello world !"),
+          ),
         ),
       ),
 
