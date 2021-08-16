@@ -33,7 +33,10 @@ class _homeScreenState extends State<homeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            const Text("title bar"),
+            const Text("title bar",
+                style: TextStyle(
+                  fontSize: 24,
+                )),
             const Icon(Icons.api),
           ],
         ),
@@ -57,6 +60,18 @@ class _homeScreenState extends State<homeScreen> {
         child: Center(
           child: Text("hello world !"),
         ),
+      ),
+
+      // floating action button
+
+      floatingActionButton: const FloatingActionButton(
+        onPressed: null,
+        child: Icon(
+          Icons.edit,
+          color: Colors.black,
+        ),
+        backgroundColor: (Colors.amber),
+        tooltip: 'edit',
       ),
     );
   }
