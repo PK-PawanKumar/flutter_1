@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         // brightness: Brightness.dark,
       ),
       home: const homeScreen(),
+      debugShowCheckedModeBanner: false, // to remove debug title
     );
   }
 }
